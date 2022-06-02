@@ -1,12 +1,12 @@
-import { ThemeProvider } from '@emotion/react';
+import { CacheProvider } from '@emotion/react';
 import { Box, Container, CssBaseline } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import Navbar from '../Navbar';
-import theme from './theme';
+import { cacheRtl } from './theme';
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
+    <CacheProvider value={cacheRtl}>
       <Navbar />
       <Container component='main' maxWidth='xs'>
         <CssBaseline />
@@ -21,7 +21,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
           {children}
         </Box>
       </Container>
-    </ThemeProvider>
+    </CacheProvider>
   );
 };
 
