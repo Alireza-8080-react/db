@@ -18,14 +18,15 @@
     "js-cookie": "^3.0.1",
     "next": "12.1.6",
     "react": "18.1.0",
+    "react-data-table-component": "^7.5.2",
     "react-dom": "18.1.0",
     "react-redux": "^8.0.2",
-    "react-toastify": "^9.0.2",
+    "react-toastify": "^9.0.3",
     "sass": "^1.52.1",
     "scss": "^0.2.4",
+    "styled-components": "^5.3.5",
     "stylis": "^4.1.1",
-    "stylis-plugin-rtl": "^2.1.1",
-    "toast": "^0.3.47"
+    "stylis-plugin-rtl": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
