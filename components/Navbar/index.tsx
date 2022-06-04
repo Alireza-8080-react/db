@@ -51,7 +51,7 @@ const ButtonAppBar = () => {
         }}
         PaperProps={{
           style: {
-            width: '15vw'
+            width: '250px'
           }
         }}
       >
