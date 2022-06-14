@@ -3,8 +3,7 @@ import {Request, Response} from "express";
 import {QUERIES} from "./../utils/db-utills/QUERIES";
 
 export const coursePostController = (req: Request, res: Response) => {
-    const {id} = req.query;
-    const query = QUERIES.postCourses;
+    const query = QUERIES.postCourses(req.body);
     Connect()
         .then(connection=>{
             Query(connection,query)

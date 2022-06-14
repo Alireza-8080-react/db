@@ -4,6 +4,7 @@ const handleSelectAll = (table : string,cond : string) =>`SELECT * from ${table}
 
 export const QUERIES = {
     getStudentGrades : (studentId : string) => handleSelectAll(TABLES.grades,`ID = ${studentId}`),
-    postCourses : `INSERT INTO takes (ID, course_id, sec_id, semester, year,grade) 
-    VALUES ('00128', 'PHY-101', '1', 'Fall', '2009', '0');`,
+    postCourses : ({studentId,courseId,secId,semester,year,grade} : any)=>`INSERT INTO takes (ID, course_id, sec_id, semester, year,grade) 
+    VALUES ("${studentId}","${courseId}","${secId}","${semester}","${year}","${grade}");`,
+    login : (id : string)=>handleSelectAll("student",`ID = ${id}`)
 }

@@ -3,9 +3,9 @@ import cors from "cors";
 import * as http from "http";
 import "dotenv/config";
 
-import studentRoute from "./routes/student";
 import gradeRoute from "./routes/grade";
 import courseRoute from "./routes/course";
+import authRoute from "./routes/auth";
 
 const app: Application = express();
 app.use(cors());
@@ -17,6 +17,6 @@ server.listen(process.env.PORT ?? "", () => {
     console.log(`server is running on port ${process.env.PORT}`);
 });
 
-app.use("/api/students", studentRoute);
 app.use("/api/grades", gradeRoute);
 app.use("/api/courses", courseRoute);
+app.use("/api/auth", authRoute);
