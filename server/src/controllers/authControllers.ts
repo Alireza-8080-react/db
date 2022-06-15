@@ -13,8 +13,8 @@ export const loginController = (req: Request, res: Response) => {
         .then(connection=>{
             Query(connection,query)
                 .then(result=> res.status(200).json({result}))
-                .catch(err=>console.log(err))
+                .catch(err=>res.status(500).json({err}))
         })
-        .catch(err=>console.log(err))
+        .catch(err=>res.status(500).json({err}))
 };
 

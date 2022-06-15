@@ -11,14 +11,15 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
     <CacheProvider value={cacheRtl}>
       <ToastContainer />
       <Navbar />
-      <Container component='main' maxWidth='xs'>
+      <Container component='main'>
         <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'center'
+            alignItems: 'center',
+            fontFamily:"vazir-medium"
           }}
         >
           {children}

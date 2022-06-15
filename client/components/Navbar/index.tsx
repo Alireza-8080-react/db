@@ -17,7 +17,7 @@ const ButtonAppBar = () => {
    useEffect(() => {
         const name = localStorage.getItem('name') ?? null;
         setName(name as string)
-    }, [])
+    }, [router.pathname])
 
     return (
     <>
@@ -38,8 +38,8 @@ const ButtonAppBar = () => {
             </IconButton>
               <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}></Typography>
               {
-                  name !== "undefined" ?
-                      <Typography variant='h6' component='div'>{name}</Typography>
+                  name ?
+                      <Typography variant='h6' component='div'>! {name} خوش آمدی </Typography>
                       :
                   <Button
                       color='inherit'

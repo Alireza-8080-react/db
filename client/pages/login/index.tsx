@@ -7,6 +7,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import axios from "axios";
 import { useRouter } from 'next/router'
+import {toast} from "react-toastify";
 
 export default function SignIn() {
     const router = useRouter()
@@ -18,11 +19,15 @@ export default function SignIn() {
         id : idVal
     }).then(res=>{
         const [data] = res.data.result;
+        console.log(data);
         localStorage.setItem('id', data.ID);
         localStorage.setItem('name', data.name);
+        localStorage.setItem('deptName', data.dept_name);
+        localStorage.setItem('totCred', data.tot_cred);
         router.push("/my-scores");
+        toast.success("با موفقیت وارد شدید")
     })
-      .catch(err=>console.log(err))
+      .catch(err=>toast.warn("آیدی وارد شده اشتباه است"))
   };
 
   return (

@@ -6,6 +6,7 @@ import "dotenv/config";
 import gradeRoute from "./routes/grade";
 import courseRoute from "./routes/course";
 import authRoute from "./routes/auth";
+import teachRoute from "./routes/teach";
 
 const app: Application = express();
 app.use(cors());
@@ -20,3 +21,4 @@ server.listen(process.env.PORT ?? "", () => {
 app.use("/api/grades", gradeRoute);
 app.use("/api/courses", courseRoute);
 app.use("/api/auth", authRoute);
+app.use("/api/teaches", teachRoute);
